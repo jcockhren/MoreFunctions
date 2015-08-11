@@ -34,23 +34,27 @@ namespace MoreFunctions
         {
             var answer = new int[inputs.Length];
             var temp = new int[inputs.Length];
+            // Get a forreal clone of this array.
             int[] copy_of_inputs = inputs.Clone() as int[];
             for (var i = 0;i < inputs.Length; i++) {
                 var item = inputs[i];
-                for (var j = 0;j < temp.Length; j++)
+                var j = 0;
+
+                while (j < temp.Length)
                 {
                     var second_item = inputs[j];
-                    if (item > second_item)
+                    if (j == temp.Length - 1) // let's include item < second_item
                     {
-                        var tmp1 = item;
-                        var tmp2 = second_item;
-                        item = tmp2;
-                        second_item = tmp1;
-                    } else
+                        // We've reached the end!!
+                        answer[j-i] = item;
+                        j = i+1;
+                        continue;
+                        // Start inner loop at current index + 1
+                    } else if (item < second_item)
                     {
-                        // Leave it?
-                    }
 
+                    }
+                    j += 1;
                 }
 
                 //var item2 = inputs[i+1];
