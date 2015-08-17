@@ -12,6 +12,7 @@ namespace MoreFunctions
         {
             int response = 1;
             int answer = 1;
+            /*
             Console.WriteLine("Please enter a number...");
             response = Int32.Parse(Console.ReadLine());
 
@@ -20,6 +21,13 @@ namespace MoreFunctions
             }
             response = answer;
             Console.WriteLine("Iterative Result: {0}", response);
+            */
+            int[] unsorted = new int[] { 5, 4, 7, 2, 1 };
+            Console.WriteLine(CoolFunctions.PrintArray(unsorted));
+            int[] sorted = CoolFunctions.InsertionSort(unsorted);
+            Console.WriteLine("Result");
+            Console.WriteLine(CoolFunctions.PrintArray(sorted));
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
 
